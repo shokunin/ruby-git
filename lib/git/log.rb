@@ -18,6 +18,7 @@ module Git
       @skip = nil
       @until = nil
       @between = nil
+      @branches = nil
     end
 
     def object(objectish)
@@ -65,6 +66,12 @@ module Git
     def between(sha1, sha2 = nil)
       dirty_log
       @between = [sha1, sha2]
+      return self
+    end
+        
+    def branches(regex)
+      dirty_log
+      @branches = regex
       return self
     end
     
