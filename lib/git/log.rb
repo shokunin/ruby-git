@@ -71,7 +71,6 @@ module Git
         
     def branches(regex)
       dirty_log
-      puts "DTM: fucking hell"
       @branches = regex
       return self
     end

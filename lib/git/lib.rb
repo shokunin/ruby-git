@@ -89,6 +89,8 @@ module Git
     
       arr_opts << '--pretty=raw'
       arr_opts << "--skip=#{opts[:skip]}" if opts[:skip]
+      #if there is not a splat at the end then this won't match
+      arr_opts << "--branches=#{opts[:branches]}*" if opts[:branches]
    
       arr_opts += log_path_options(opts)
       
