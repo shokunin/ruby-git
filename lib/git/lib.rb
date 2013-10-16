@@ -501,7 +501,7 @@ module Git
     def checkout(branch, opts = {})
       arr_opts = []
       arr_opts << '-f' if opts[:force]
-      arr_opts << '-b' 
+      arr_opts << '-b' if opts[:branch_new]
       arr_opts << branch
       arr_opts << " -t origin/#{branch}" if opts[:track_origin]
       
